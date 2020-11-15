@@ -80,10 +80,10 @@ class ModbusIP : public Modbus {
 	~ModbusIP();
 	bool isTransaction(uint16_t id);
 	bool isConnected(IPAddress ip);
-	bool connect(IPAddress ip, uint16_t port = MODBUSIP_PORT);
+	virtual bool connect(IPAddress ip, uint16_t port = MODBUSIP_PORT);
 	bool disconnect(IPAddress ip);
 	void server(uint16_t port = MODBUSIP_PORT);
-	inline void slave(uint16_t port = MODBUSIP_PORT) { server(port); }	// Depricated
+	inline virtual void slave(uint16_t port = MODBUSIP_PORT) { server(port); }	// Depricated
 	void client();
 	inline void master() { client(); }		// Depricated
 	void task();

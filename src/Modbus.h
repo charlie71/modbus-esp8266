@@ -228,8 +228,8 @@ class Modbus {
         // data - if null use local registers. Otherwise use data from array to erite to slave
 
         bool addReg(TAddress address, uint16_t value = 0, uint16_t numregs = 1);
-        bool Reg(TAddress address, uint16_t value);
-        uint16_t Reg(TAddress address);
+        virtual bool Reg(TAddress address, uint16_t value);
+        virtual uint16_t Reg(TAddress address);
         bool removeReg(TAddress address, uint16_t numregs = 1);
 
         bool onGet(TAddress address, cbModbus cb = nullptr, uint16_t numregs = 1);
